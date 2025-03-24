@@ -1,0 +1,14 @@
+# Linking Agent
+ [{"role":"user", "content":f"'{item}' and '{queries[i]}' refer to the same item, is it correct? Give your answer in the form: Answer: <one of: YES, NO>"}]
+
+[{"role":"user", "content":f"What is the relationship between the query item '{queries[i]}' and the candidate items in the list {items}. Output the relationship result for each candidate in the candidate list.\n Give your answer in the form:\n Candidate 1: <candidate 1>\ncategory: <one of: EXACT_MATCH, RELATED_TO, DIFFERENT>\nCandidate 2: <candidate 2>\ncategory: <one of: EXACT_MATCH, RELATED_TO, DIFFERENT>. Make use of all provided information, including the concept names, definitions, and relationships. Looking at your previous generated results. Pick the items with EXACT_MATCH or RELATED_TO relationship. The item in the picked items that you think closest to '{queries[i]}' is the output chosen item. If all the items are with DIFFERENT relationship, output 'Nothing'.\nGive your answer in the form:\nAnswer: <the chosen item or NOTHING>"}]
+
+# Retrieval Agent
+[{"role":"user", "content":f"'Please summarize key related factors for diagnosing PSCI in a paragraph based on your knowledge base and the extracted KG information: {dataset}"}]
+
+[{"role":"user", "content":f"'Please summarize unrelated factors for diagnosing PSCI in a paragraph based on your knowledge base and the extracted KG information: {dataset}"}]
+
+# Prediction Agent
+Your task is to predict whether a patient will develop specific diseases according to the current diagnosis. Please respond with 'YES' if the patient is likely to develop the specified diseases, or 'NO' if not. Diagnosis: ... Question: Will the patient develop the following diseases ...? Do not overestimate the probability of a patient unless certain standards are met. KG guidance (positive information): ... Please answer in the following format: disease: <YES or NO>.
+
+Check your prediction cautiously. Do not overestimate the probability of a patient unless certain provided standards are met. KG guidance (negative information): ... Please answer in the following format: disease: <YES or NO>
