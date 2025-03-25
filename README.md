@@ -8,8 +8,12 @@ This is the code repository for paper: KERAP: A Knowledge-Enhanced Reasoning App
 Medical diagnosis prediction, which is the task of predicting a patient’s future health risks based on their historically observed medical data such as electronic health records (EHRs), plays a vital role in enabling accurate healthcare and early interventions.
 
 ## Method Framework
-KERAP consists of three key components: the linkage agent, the retrieval agent, and the prediction agent. The linkage agent maps the predicted disease to a biomedical KG, establishing connections with relevant entities. The retrieval agent then queries the KG to extract and summarize related knowledge, categorizing the results into positive (e.g.,“symptom X indicates condition Y”) and negative knowledge (e.g., “symptom X rules out condition Z”) for inclusion and exclusion criteria. Finally, the prediction agent AP R integrates patient records with the extracted structured
-knowledge, leveraging multi-stage reasoning to achieve zero-shot diagnosis prediction.
+KERAP consists of three key components: the linkage agent, the retrieval agent, and the prediction agent. The linkage agent maps the predicted disease to a biomedical KG, establishing connections with relevant entities. The retrieval agent then queries the KG to extract and summarize related knowledge, categorizing the results into positive (e.g.,“symptom X indicates condition Y”) and negative knowledge (e.g., “symptom X rules out condition Z”) for inclusion and exclusion criteria. Finally, the prediction agent AP R integrates patient records with the extracted structured knowledge, leveraging multi-stage reasoning to achieve zero-shot diagnosis prediction.
+
+<p align="center">
+  <img src="docs/framework.png" width="700">
+</p>
+<p align="center"><em>Overview of our proposed KERAP framework.</em></p>
 
 ## Linkage Agent
 
